@@ -24,8 +24,11 @@ export default function Card({ data }) {
           >
             Detail
           </button>
-          <button className="rounded py-2 px-4 bg-red-500 text-white hover:bg-red-800">
-            Delete
+          <button
+            className="rounded py-2 px-4 border border-yellow-500 hover:text-white hover:bg-yellow-500"
+            onClick={() => navigate(`/edit-user/${data.id}`)}
+          >
+            Edit
           </button>
         </div>
       </div>

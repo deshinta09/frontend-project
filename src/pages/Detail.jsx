@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { fetchDetailUser } from "../feature/userSlice";
+import Navbar from "../components/navbar";
 
 export default function Detail() {
   const { id } = useParams();
@@ -12,11 +13,10 @@ export default function Detail() {
     dispatch(fetchDetailUser(id));
   }, []);
 
-  //   console.log(detail, "<< data detail user");
   return (
     <>
-      <div className="container">
-        <h1 className="text-center text-xl font-bold my-10">Detail {id}</h1>
+      <Navbar page="detail" />
+      <div className="container mt-10">
         <div className="w-screen px-10 grid content-evenly">
           <div className="flex p-5 items-center rounded border border-slate-200 shadow-sm">
             <img

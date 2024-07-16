@@ -44,7 +44,7 @@ export default function Register() {
       });
     }
   }
-  // const onSubmit = (d) => console.log(JSON.stringify(d));
+
   return (
     <>
       <div className="w-screen h-screen bg-cover flex bg-[#9bbefe]">
