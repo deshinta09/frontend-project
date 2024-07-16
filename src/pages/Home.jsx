@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchUser } from "../feature/userSlice";
+import Card from "../components/card";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -14,7 +15,9 @@ export default function Home() {
   return (
     <>
       <h1 className="text-2xl text-center my-10 font-bold">List User</h1>
-      <div className="w-screen"></div>
+      <div className="w-screen mx-24">
+        <Card />
+      </div>
     </>
   );
 }
