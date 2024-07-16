@@ -1,4 +1,8 @@
+import { useNavigate } from "react-router-dom";
+
 export default function Card({ data }) {
+  const navigate = useNavigate();
+
   return (
     <>
       <div className="w-72 rounded-lg shadow-lg border border-slate-200 p-3 mb-8">
@@ -14,7 +18,10 @@ export default function Card({ data }) {
           <h5>{data.email}</h5>
         </div>
         <div className="flex justify-around p-5">
-          <button className="rounded py-2 px-4 bg-sky-500 text-white hover:bg-sky-800">
+          <button
+            className="rounded py-2 px-4 bg-sky-500 text-white hover:bg-sky-800"
+            onClick={() => navigate(`/user/${data.id}`)}
+          >
             Detail
           </button>
           <button className="rounded py-2 px-4 bg-red-500 text-white hover:bg-red-800">
