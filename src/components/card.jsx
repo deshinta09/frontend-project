@@ -1,24 +1,24 @@
-export default function Card() {
+export default function Card({ data }) {
   return (
     <>
-      <div className="w-64 rounded-lg shadow-lg border border-slate-200 p-3">
+      <div className="w-72 rounded-lg shadow-lg border border-slate-200 p-3 mb-8">
         <img
-          src="/blue-waves.png"
+          src={data.image}
           alt="image-profile"
           className="rounded-full w-11/12 m-auto"
         />
-        <h1 className="text-xl font-semibold text-center">Username</h1>
+        <h1 className="text-xl font-semibold text-center">{data.username}</h1>
         <div className="text-slate-500 mt-4 text-base text-center">
-          <p>gender</p>
-          <h5>1982-11-6</h5>
-          <h5>email@mail.com</h5>
+          <p>{data.gender}</p>
+          <h5>{data.birthDate}</h5>
+          <h5>{data.email}</h5>
         </div>
         <div className="flex justify-around p-5">
-          <button className="rounded py-2 px-4 bg-sky-500 text-white">
-            Delete
-          </button>
-          <button className="rounded py-2 px-4 bg-red-500 text-white">
+          <button className="rounded py-2 px-4 bg-sky-500 text-white hover:bg-sky-800">
             Detail
+          </button>
+          <button className="rounded py-2 px-4 bg-red-500 text-white hover:bg-red-800">
+            Delete
           </button>
         </div>
       </div>

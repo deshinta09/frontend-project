@@ -11,12 +11,13 @@ export default function Home() {
     dispatch(fetchUser());
   }, []);
 
-  // console.log(users, "<<< data users");
   return (
     <>
       <h1 className="text-2xl text-center my-10 font-bold">List User</h1>
-      <div className="w-screen mx-24">
-        <Card />
+      <div className="container mx-auto flex flex-wrap gap-8 justify-around">
+        {users.map((el) => (
+          <Card key={el.id} data={el} />
+        ))}
       </div>
     </>
   );
