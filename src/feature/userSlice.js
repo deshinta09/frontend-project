@@ -19,10 +19,11 @@ export const userSlice = createSlice({
 
 export const { setUser, setDetailUser } = userSlice.actions;
 
-export const fetchUser = () => {
+export const fetchUser = (q) => {
   return async (dispatch) => {
+    // console.log({ q });
     try {
-      let response = await fetch("https://dummyjson.com/users");
+      let response = await fetch(`https://dummyjson.com/users?q=${q}`);
       let responseBody = await response.json();
 
       if (response.ok) {

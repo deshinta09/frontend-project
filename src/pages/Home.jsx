@@ -9,7 +9,7 @@ export default function Home() {
   const users = useSelector((state) => state.user.list);
 
   useEffect(() => {
-    dispatch(fetchUser());
+    dispatch(fetchUser(""));
   }, []);
 
   return (
