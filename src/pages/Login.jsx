@@ -15,8 +15,15 @@ export default function Login() {
           "Content-Type": "application/json",
         },
       });
-      console.log(response, "<< respon");
-      console.log(JSON.stringify(data), "<< data yang diinput");
+      // console.log(response, "<< respon");
+      // console.log(JSON.stringify(data), "<< data yang diinput");
+      localStorage.setItem("username_login", JSON.stringify(data).username);
+      navigate("/");
+      Swal.fire({
+        title: "Success",
+        icon: "success",
+        text: "Success login !",
+      });
     } catch (error) {
       console.log(error, "<< error login");
       Swal.fire({

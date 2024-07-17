@@ -1,8 +1,11 @@
 import { useForm } from "react-hook-form";
 import Navbar from "../components/navbar";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 export default function Add() {
   const { register, handleSubmit } = useForm();
+  const navigate = useNavigate();
 
   async function onSubmit(data) {
     try {
@@ -42,11 +45,11 @@ export default function Add() {
 
   return (
     <>
-      <Navbar page={id ? "edit-user" : "add-user"} />
+      <Navbar page="add-user" />
       <div className="w-screen p-10">
         <div className="w-2/5 border border-slate-200 shadow m-auto rounded mt-5">
           <h1 className="pt-8 text-center text-2xl font-semibold">
-            {id ? "Edit User" : "Add New User"}
+            Add New User
           </h1>
           <form onSubmit={handleSubmit(onSubmit)} className="mt-4 p-7">
             <div className="flex">

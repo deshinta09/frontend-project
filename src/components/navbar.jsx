@@ -1,7 +1,18 @@
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 export default function Navbar({ page }) {
   const navigate = useNavigate();
+  function handleLogout() {
+    localStorage.removeItem("username_login");
+    Swal.fire({
+      icon: "success",
+      title: "Success",
+      text: "Success logout !",
+    });
+    navigate("/login");
+  }
+
   return (
     <>
       <div className="w-screen bg-[#9bbefe] p-5">
@@ -39,7 +50,10 @@ export default function Navbar({ page }) {
                 Add User
               </h1>
             )}
-            <h1 className="py-2 px-3 hover:bg-sky-800 rounded cursor-pointer hover:text-white">
+            <h1
+              className="py-2 px-3 hover:bg-sky-800 rounded cursor-pointer hover:text-white"
+              onClick={handleLogout}
+            >
               Log Out
             </h1>
           </div>
